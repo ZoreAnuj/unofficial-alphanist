@@ -1,0 +1,22 @@
+The Unofficial Implementation of Alpha NIST
+
+This is an independent implementation and is not an official AlphaNIST release.
+
+Method: Octi Zhang et al., AlphaNIST: Emergent Assembly Skills from Binary Task
+Rewards, arXiv:2610.13354 (2026), https://arxiv.org/abs/2610.13354.
+
+The policy/PPO implementation references configuration and implementation
+behavior in UW-Lab/UWLab, UW-Lab/rsl_rl, and SonyResearch/simba at the revisions
+listed in docs/provenance.md. It is not a vendored copy of those repositories.
+Their complete license notices are retained in third_party/ for traceability.
+
+Runtime overlays transform installed MuJoCo-Warp source at runtime and retain
+its source headers. Runtime packages must be acquired under their own licenses.
+
+Task images incorporate FreeCAD-library source geometry (CC BY 3.0) and,
+for the gear render only, NVIDIA IndustRealKit source geometry (NVIDIA
+research/evaluation license). Image-specific authors, sources, and changes
+are listed in docs/provenance.md and docs/images/provenance.json.
+
+No AlphaNIST authorship, affiliation, endorsement, result, or original-code
+ownership is claimed by this repository.

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unofficial-alphanist"
+version = "0.1.0"
+description = "An unofficial research implementation of AlphaNIST for industrial assembly"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{name = "Anuj Zore"}]
+dependencies = ["numpy>=1.26", "torch>=2.6", "scipy>=1.13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+simulation = ["numba>=0.60"]
+render = ["Pillow>=10"]
+geometry = ["trimesh>=4", "shapely>=2", "coacd>=1", "usd-core>=25"]
+
+[tool.setuptools.packages.find]
+where = ["src/python"]
+namespaces = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src/python"]
+python_files = ["*_unit_test.py", "test_*.py"]

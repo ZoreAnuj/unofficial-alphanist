@@ -1,0 +1,14 @@
+Licensing status
+
+This repository contains a curated research-source export and separately
+attributed third-party references and images. No blanket open-source license
+is granted for project-specific source in this initial publication. Public
+availability alone does not grant permission to redistribute, modify, or
+commercially use that source. Contact the repository maintainer for permission.
+
+Third-party material retains its original terms. See NOTICE,
+docs/provenance.md, and the complete notices in third_party/.
+In particular, the gear render is subject to NVIDIA's research/evaluation-only
+license. The other task renders incorporate CC BY 3.0 geometry with attribution.
+No rights in external robot models, CAD assets, trademarks, or datasets are
+conferred by this repository.

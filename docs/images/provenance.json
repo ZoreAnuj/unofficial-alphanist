@@ -1,0 +1,136 @@
+[
+  {
+    "image": "02_motor_mount.png",
+    "sha256": "1ec02036fc48841ed4589dec275236946a6b40183e19125d0f65dadf42141291",
+    "kind": "assembled-target render, not policy rollout",
+    "changes": "Source CAD converted to USD, placed at target assembly transforms, and rendered with scene materials and lighting.",
+    "geometry_sources": [
+      {
+        "file": "motor.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Electrical%20Parts/Motors/Stepper/NEMA/Old/NEMA-17_Stepper_Motor_40mm_with_connector.step",
+        "sha256": "f80e4f0df508f882e3d093018cfd8e13deeb21abd9e416446208fe97eb2e0c2c",
+        "license": "CC-BY-3.0",
+        "attribution": "Charles Fox"
+      },
+      {
+        "file": "motor_bracket.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Electrical%20Parts/Motors/Stepper/NEMA/Nema-17_Mount_Bracket/Nema-17_MountBracket.step",
+        "sha256": "ee28ab7d424d166a28d2e92eabe38c1a5dab59d0ca169cd2e3516e0e8015af41",
+        "license": "CC-BY-3.0",
+        "attribution": "Charles Fox"
+      }
+    ],
+    "source_render_sha256": "bbe617c469633572a5da3799ca595c0efb6b5bc39ce23953bb0bf0d1fa0edcca",
+    "metadata": "Text and EXIF metadata removed for publication; all image pixel data chunks preserved byte-for-byte."
+  },
+  {
+    "image": "03_shaft_coupling.png",
+    "sha256": "d34759e5f8edb22966fa45c411151842b23b24442b84d68510dfd8996fd65258",
+    "kind": "assembled-target render, not policy rollout",
+    "changes": "Source CAD converted to USD, placed at target assembly transforms, and rendered with scene materials and lighting.",
+    "geometry_sources": [
+      {
+        "file": "motor.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Electrical%20Parts/Motors/Stepper/NEMA/Old/NEMA-17_Stepper_Motor_40mm_with_connector.step",
+        "sha256": "f80e4f0df508f882e3d093018cfd8e13deeb21abd9e416446208fe97eb2e0c2c",
+        "license": "CC-BY-3.0",
+        "attribution": "Charles Fox"
+      },
+      {
+        "file": "coupling.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Mechanical%20Parts/Fasteners/Shaft%20Couplers%20%26%20Dowel%20Pins/Zaxis_coupling_5x8mm.step",
+        "sha256": "749a279c6a49e1543b47b4113a06d07ca9468ef1815ca7d333c51f7fed22e53f",
+        "license": "CC-BY-3.0",
+        "attribution": "WladIMirG"
+      }
+    ],
+    "source_render_sha256": "b9cfe3392ed163b53e26f752c88c7b5f0e7468196c7ce4f66353a24d04c5421c",
+    "metadata": "Text and EXIF metadata removed for publication; all image pixel data chunks preserved byte-for-byte."
+  },
+  {
+    "image": "04_linear_guide.png",
+    "sha256": "63c35ea809d4bb96841f468719f8d28aedd6b6e8d07219d185b6ccf4bb66a38c",
+    "kind": "assembled-target render, not policy rollout",
+    "changes": "Source CAD converted to USD, placed at target assembly transforms, and rendered with scene materials and lighting.",
+    "geometry_sources": [
+      {
+        "file": "carriage_detailed.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Mechanical%20Parts/Bearings/linear_bearings/LinearSlide-MGN7-12x-Block.step",
+        "sha256": "6f23dfc9c79141debbe9cd0bf540bc7e7e8cae0240dc65c9c467e1d4fa8d9c52",
+        "license": "CC-BY-3.0",
+        "attribution": "FreeCAD-library contributors; see source commit"
+      },
+      {
+        "file": "rail_mgn7.step",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Mechanical%20Parts/Bearings/linear_bearings/LinearSlide-MGN7-Rail.step",
+        "sha256": "5ec368c624a399bf911846074898aefef30e5cc79be90555d4c69389a0a601c5",
+        "license": "CC-BY-3.0",
+        "attribution": "FreeCAD-library contributors; see source commit"
+      }
+    ],
+    "source_render_sha256": "2cb0cebcb8b9e3e68cd2d3c5d8e563f6cfbfd9653a7e00c3a9661cb853571504",
+    "metadata": "Text and EXIF metadata removed for publication; all image pixel data chunks preserved byte-for-byte."
+  },
+  {
+    "image": "05_enclosure.png",
+    "sha256": "f78abdabdb8c840e774635075486fecf8c6ba87d1345070b9a05031920638f20",
+    "kind": "assembled-target render, not policy rollout",
+    "changes": "Source CAD converted to USD, placed at target assembly transforms, and rendered with scene materials and lighting.",
+    "geometry_sources": [
+      {
+        "file": "enclosure.FCStd",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Mechanical%20Parts/Enclosures/Waterproof_case/Cuerpo.FCStd",
+        "sha256": "45988988413239c583a4ce328b76773ce32882f84590bfe20d92e18c7d580158",
+        "license": "CC-BY-3.0",
+        "attribution": "WladIMirG"
+      },
+      {
+        "file": "lid.FCStd",
+        "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD-library/f5ca01cdcaa2f69b9295a6382719c2d90628780c/Mechanical%20Parts/Enclosures/Waterproof_case/Tapa.FCStd",
+        "sha256": "2ba633b2ab271ca178dfb8b0d4bac51a1e574f47a3a37880cec632dd51362b50",
+        "license": "CC-BY-3.0",
+        "attribution": "WladIMirG"
+      }
+    ],
+    "source_render_sha256": "ab634d81151e24a0e2d99f8935e8792ee3808a47e31f02ddc89f134e74b38fb2",
+    "metadata": "Text and EXIF metadata removed for publication; all image pixel data chunks preserved byte-for-byte."
+  },
+  {
+    "image": "06_gear_train.png",
+    "sha256": "cbc1215be106b6d11838ef1a253f7bbf5819ef303344a5f825bbff8d0b437583",
+    "kind": "assembled-target render, not policy rollout",
+    "changes": "Source CAD converted to USD, placed at target assembly transforms, and rendered with scene materials and lighting.",
+    "geometry_sources": [
+      {
+        "file": "gear_base.obj",
+        "url": "https://media.githubusercontent.com/media/NVlabs/industrealkit/0c91cb5f7fb391e0cc8515fcdf669aab7e9ffe4b/gears/obj/gear_base.obj",
+        "sha256": "80a0532a8dda1062cfe6270a370abcef62c4b92bbbed17e30d5aa64e09f80e92",
+        "license": "NVIDIA research/evaluation only",
+        "attribution": "NVIDIA IndustRealKit contributors"
+      },
+      {
+        "file": "gear_small.obj",
+        "url": "https://media.githubusercontent.com/media/NVlabs/industrealkit/0c91cb5f7fb391e0cc8515fcdf669aab7e9ffe4b/gears/obj/gear_small.obj",
+        "sha256": "c2c3d6e47d8ea84688195984e76862a25207d1db4999d248afa1f5a6b77730f2",
+        "license": "NVIDIA research/evaluation only",
+        "attribution": "NVIDIA IndustRealKit contributors"
+      },
+      {
+        "file": "gear_medium.obj",
+        "url": "https://media.githubusercontent.com/media/NVlabs/industrealkit/0c91cb5f7fb391e0cc8515fcdf669aab7e9ffe4b/gears/obj/gear_medium.obj",
+        "sha256": "6b441da88e6cd0411dce2eb74f971bce818ff6ac9fbd637cf5d61051bfe1fbdd",
+        "license": "NVIDIA research/evaluation only",
+        "attribution": "NVIDIA IndustRealKit contributors"
+      },
+      {
+        "file": "gear_large.obj",
+        "url": "https://media.githubusercontent.com/media/NVlabs/industrealkit/0c91cb5f7fb391e0cc8515fcdf669aab7e9ffe4b/gears/obj/gear_large.obj",
+        "sha256": "894a4a6e7f37e3b247cd2872c5791c9b61020c9cdc013cdddd57fa1649b09377",
+        "license": "NVIDIA research/evaluation only",
+        "attribution": "NVIDIA IndustRealKit contributors"
+      }
+    ],
+    "source_render_sha256": "8382ea66ed374ebaf1802e4dcc811b0052e4ad2c94df450345c077244993814a",
+    "metadata": "Text and EXIF metadata removed for publication; all image pixel data chunks preserved byte-for-byte."
+  }
+]

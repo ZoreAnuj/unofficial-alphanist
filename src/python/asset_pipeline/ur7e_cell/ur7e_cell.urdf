@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+  UR7e cell: kinematic model (URDF) of the arm, its tool flange, the gripper fingertips and the wrist camera.
+
+  VERIFIED on this robot
+    - The six joint axes and link lengths (standard UR5e values). Against the controller's own records of the 48-hour run
+      (2,588 poses) the flange pose from this chain is 1.05 mm (worst 1.15 mm) and 0.13 deg off. The rest is this arm's
+      factory calibration. Check: python robot/ur7e_kinematics.py   (it also re-reads this file and compares)
+    - "base" is the controller's base frame, the one every pose in the datasets is given in. (The ROS driver's "base_link"
+      is the same frame turned half a turn about z.)
+    - "tool0" is the flange, which is what the robot reports as its tool pose here: no tool offset is set on the controller.
+    - The camera's rotation, its sideways offset from the tool axis and its height above the fingertips (from the cell's
+      camera calibration, vision/rot_result.json).
+
+  NOT MEASURED - placeholders, marked below
+    - Flange to fingertip distance (0.160 m): nobody has measured it on this gripper. The camera hangs off that frame, so
+      its height above the flange carries the same unknown; its height above the fingertips does not.
+    - Masses, inertias, effort limits: nominal UR5e figures so that simulators load the file. Not for dynamics.
+    - No meshes and no collision shapes. For those use Universal Robots' own description files (see README.md).
+
+  Joint frames follow the usual UR link-length table: each joint turns about the z axis of its parent frame.
+-->
+<robot name="ur7e_cell">
+  <link name="base"/>
+  <link name="shoulder_link"><inertial><mass value="3.7"/><inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="upper_arm_link"><inertial><mass value="8.393"/><inertia ixx="0.1" iyy="0.1" izz="0.01" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="forearm_link"><inertial><mass value="2.275"/><inertia ixx="0.03" iyy="0.03" izz="0.004" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="wrist_1_link"><inertial><mass value="1.219"/><inertia ixx="0.002" iyy="0.002" izz="0.002" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="wrist_2_link"><inertial><mass value="1.219"/><inertia ixx="0.002" iyy="0.002" izz="0.002" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="wrist_3_link"><inertial><mass value="0.1879"/><inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" ixz="0" iyz="0"/></inertial></link>
+  <link name="tool0"/>
+  <link name="fingertips"/>
+  <link name="camera_optical"/>
+
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="base"/><child link="shoulder_link"/><origin xyz="0 0 0" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="150"/>
+  </joint>
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/><child link="upper_arm_link"/><origin xyz="0 0 0.1625" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="150"/>
+  </joint>
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/><child link="forearm_link"/><origin xyz="-0.425 0 0" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="150"/>
+  </joint>
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/><child link="wrist_1_link"/><origin xyz="-0.3922 0 0" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="28"/>
+  </joint>
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/><child link="wrist_2_link"/><origin xyz="0 0 0.1333" rpy="1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="28"/>
+  </joint>
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/><child link="wrist_3_link"/><origin xyz="0 0 0.0997" rpy="-1.5707963268 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" velocity="3.1416" effort="28"/>
+  </joint>
+  <joint name="flange" type="fixed">
+    <parent link="wrist_3_link"/><child link="tool0"/><origin xyz="0 0 0.0996" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Robotiq Hand-E, closed fingertips. z = 0.160 is a PLACEHOLDER: measure flange to fingertip and put it here. -->
+  <joint name="tool0_to_fingertips" type="fixed">
+    <parent link="tool0"/><child link="fingertips"/><origin xyz="0 0 0.160" rpy="0 0 0"/>
+  </joint>
+  <!-- Intel RealSense D405 colour camera, optical frame (z along the view, x right, y down in the picture).
+       5.9 mm and 74.9 mm to the side of the tool axis, 116.2 mm above the closed fingertips, looking 35 deg off the tool axis. -->
+  <joint name="fingertips_to_camera" type="fixed">
+    <parent link="fingertips"/><child link="camera_optical"/><origin xyz="0.00592 0.07489 -0.1162" rpy="-0.60978 0.05248 -3.13856"/>
+  </joint>
+</robot>

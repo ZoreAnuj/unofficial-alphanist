@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "robot": "ur7e",
+  "physics_hz": 750,
+  "home_joints_deg": [
+    59.251,
+    -100.867,
+    -91.991,
+    -77.142,
+    90.0,
+    -63.049
+  ],
+  "robot_collision_path": "src/python/asset_pipeline/ur7e_cell/official/collision",
+  "actuator": {
+    "kp": [
+      5000,
+      7000,
+      5000,
+      2000,
+      1500,
+      1000
+    ],
+    "kd": [
+      80,
+      90,
+      50,
+      12,
+      10,
+      8
+    ],
+    "armature": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "effort_limit_nm": [
+      150,
+      150,
+      150,
+      28,
+      28,
+      28
+    ],
+    "gravity_compensation": 1.0,
+    "provenance": "Effort limits from Universal Robots' ur7e joint_limits.yaml (src/python/asset_pipeline/ur7e_cell/official); published model limits, not measured motor curves. Armature 0.1 kg m2 on every joint is the nominal value of the station's UR model (phys_model/builder/robot_builder.py, from MuJoCo Menagerie's UR5e), not a measured rotor inertia. Joint PD gains are the FANUC profile's nominal values; the gantry scene commands torque through its Cartesian controller and does not use them. Ideal model gravity feedforward before effort saturation."
+  },
+  "jaw": {
+    "open_m": 0.025,
+    "closed_m": 0.0,
+    "limit_lower_m": 0.0,
+    "limit_upper_m": 0.025,
+    "kp": 12000,
+    "kd": 40,
+    "effort_limit_n": 20,
+    "velocity_limit_m_s": 0.1,
+    "armature_kg": 0.05,
+    "provenance": "Robotiq Hand-E: 25 mm travel per finger, fingers coupled by one motor (mimic constraint in the model). Force limit 20 N per finger is the gripper's lowest setting (range 20 to 185 N); 0.1 m/s is inside its 0.02 to 0.15 m/s range. PD gains, the 20 ms target filter and the 0.05 kg armature are the nominal servo of the scene, not measured on a Hand-E"
+  },
+  "tool_bodies": {
+    "hande_body": {
+      "mass_kg": 0.983,
+      "com_m": [
+        0,
+        0,
+        0.055
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0013368,
+          0,
+          0
+        ],
+        [
+          0,
+          0.0013368,
+          0
+        ],
+        [
+          0,
+          0,
+          0.0006912
+        ]
+      ],
+      "provenance": "Robotiq Hand-E coupler 0.119 kg + body 0.864 kg (product sheet); centre of mass at mid height and the inertia of a uniform 75 mm x 110 mm cylinder are nominal, not measured"
+    },
+    "hande_finger_right": {
+      "mass_kg": 0.02955,
+      "com_m": [
+        -0.007094,
+        -0.001423,
+        0.126617
+      ],
+      "inertia_kg_m2": [
+        [
+          6.714e-06,
+          -9.232e-08,
+          -8.352e-07
+        ],
+        [
+          -9.232e-08,
+          5.783e-06,
+          -5.62e-07
+        ],
+        [
+          -8.352e-07,
+          -5.62e-07,
+          1.974e-06
+        ]
+      ],
+      "provenance": "Hand-E fingertip holder, flat silicone fingertip and four M3 screws, calculated from the box dimensions of Robotiq's drawings with aluminium 2700 kg/m3, silicone 1150 kg/m3 and 0.6 g per screw; the rack is part of the gripper body; not measured"
+    },
+    "hande_finger_left": {
+      "mass_kg": 0.02955,
+      "com_m": [
+        0.007094,
+        0.001423,
+        0.126617
+      ],
+      "inertia_kg_m2": [
+        [
+          6.714e-06,
+          -9.232e-08,
+          8.352e-07
+        ],
+        [
+          -9.232e-08,
+          5.783e-06,
+          5.62e-07
+        ],
+        [
+          8.352e-07,
+          5.62e-07,
+          1.974e-06
+        ]
+      ],
+      "provenance": "Hand-E fingertip holder, flat silicone fingertip and four M3 screws, calculated from the box dimensions of Robotiq's drawings with aluminium 2700 kg/m3, silicone 1150 kg/m3 and 0.6 g per screw; the rack is part of the gripper body; not measured"
+    },
+    "wrist_camera": {
+      "mass_kg": 0.1,
+      "com_m": [
+        0,
+        0,
+        0
+      ],
+      "inertia_kg_m2": [
+        [
+          3e-05,
+          0,
+          0
+        ],
+        [
+          0,
+          5e-05,
+          0
+        ],
+        [
+          0,
+          0,
+          5e-05
+        ]
+      ],
+      "provenance": "nominal camera and mount lump; calibrated camera transform, unmeasured inertia"
+    }
+  },
+  "contact": {
+    "mu": 0.8,
+    "ke": 100000,
+    "kd": 1000,
+    "mu_torsional": 0.002,
+    "mu_rolling": 0.0001,
+    "condim": 6,
+    "provenance": "nominal Newton native MuJoCo contact parameters; explicit condim 6 activates declared torsional and rolling friction; no restitution or PhysX combine-mode equivalence"
+  },
+  "objects": {
+    "dice": {
+      "mass_kg": 0.0084,
+      "provenance": "nominal ABS-density 20 mm cube; inertia derived from authored CAD bounds"
+    },
+    "block_b": {
+      "mass_kg": 0.02,
+      "provenance": "nominal support block mass; inertia derived from authored CAD bounds"
+    }
+  },
+  "solver": {
+    "nconmax": 1024,
+    "njmax": 8192,
+    "iterations": 100,
+    "tolerance": 1e-08,
+    "cone": "elliptic",
+    "impratio": 10.0,
+    "provenance": "declared numerical settings; native MuJoCo contacts, implicitfast, Newton solver; elliptic cone and friction impedance ratio 10 address regularized soft-contact creep per official MuJoCo modeling documentation (https://github.com/google-deepmind/mujoco/blob/main/doc/modeling.rst); controlled native episode smoke_04_elliptic10 passed strict hold gates with unchanged physical friction coefficients, actuator gains, and guard thresholds; these are numerical settings, not fitted material measurements"
+  }
+}
