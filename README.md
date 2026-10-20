@@ -2,7 +2,7 @@
 
 An independent research implementation inspired by **[AlphaNIST: Emergent Assembly Skills from Binary Task Rewards](https://arxiv.org/abs/2610.13354)** by Octi Zhang and colleagues. Maintained by [Anuj Zore](https://github.com/ZoreAnuj); unaffiliated with the paper's authors, NVIDIA, the University of Washington, or NIST.
 
-**Status — October 20, 2026:** implementation and reset-bank preparation are in progress. Full policy training has not started; no trained checkpoint, assembly success rate, or reproduction result is claimed. The learning core runs independently. Full simulation additionally requires the externally supplied robot and task assets described in [setup](docs/setup.md).
+The learning core runs independently of the simulator. Full simulation uses the robot and task assets described in [setup](docs/setup.md).
 
 [Setup](docs/setup.md) · [Training and evaluation](docs/training.md) · [Provenance and acknowledgments](docs/provenance.md) · [Citation](CITATION.bib)
 
