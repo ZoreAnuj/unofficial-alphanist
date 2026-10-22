@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this implementation, cite the original AlphaNIST paper and acknowledge this repository."
+title: "AlphaNIST: Unofficial Implementation"
+type: software
+authors:
+  - family-names: Zore
+    given-names: Anuj
+repository-code: "https://github.com/ZoreAnuj/AlphaNIST"
+url: "https://github.com/ZoreAnuj/AlphaNIST"
+keywords:
+  - AlphaNIST
+  - reinforcement-learning
+  - robot-assembly
+  - PPO
+  - NIST Assembly Task Board
+references:
+  - type: article
+    title: "AlphaNIST: Emergent Assembly Skills from Binary Task Rewards"
+    authors:
+      - family-names: Zhang
+        given-names: Octi
+    year: 2026
+    doi: 10.48550/arXiv.2610.13354
+    url: "https://arxiv.org/abs/2610.13354"

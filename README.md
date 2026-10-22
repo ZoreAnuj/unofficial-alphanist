@@ -1,6 +1,10 @@
-# The Unofficial Implementation of Alpha NIST
+# AlphaNIST: Unofficial Implementation
 
-An independent research implementation inspired by **[AlphaNIST: Emergent Assembly Skills from Binary Task Rewards](https://arxiv.org/abs/2610.13354)** by Octi Zhang and colleagues. Maintained by [Anuj Zore](https://github.com/ZoreAnuj); unaffiliated with the paper's authors, NVIDIA, the University of Washington, or NIST.
+[![arXiv](https://img.shields.io/badge/arXiv-2610.13354-b31b1b.svg)](https://arxiv.org/abs/2610.13354)
+[![Project page](https://img.shields.io/badge/project-alpha--nist.github.io-blue)](https://alpha-nist.github.io)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB.svg)](pyproject.toml)
+
+An **unofficial**, independent PyTorch implementation of **[AlphaNIST: Emergent Assembly Skills from Binary Task Rewards](https://arxiv.org/abs/2610.13354)** (arXiv:2610.13354, NVIDIA Seattle Robotics Lab, Octi Zhang and colleagues): multi-task robot assembly reinforcement learning with PPO, binary task rewards and success-guided reset sampling, in the spirit of the NIST Assembly Task Board. Maintained by [Anuj Zore](https://github.com/ZoreAnuj); unaffiliated with the paper's authors, NVIDIA, the University of Washington, or NIST. The authors have not released official code at the time of writing; see the [project page](https://alpha-nist.github.io) for their videos.
 
 The learning core runs independently of the simulator. Full simulation uses the robot and task assets described in [setup](docs/setup.md).
 
@@ -59,7 +63,7 @@ No CAD meshes, reset-bank data, checkpoints, credentials, infrastructure configu
 
 ## Citation
 
-Please cite the original paper when using the method, and acknowledge this repository separately when using this implementation. The paper's results belong to its authors.
+GitHub shows a "Cite this repository" button from [CITATION.cff](CITATION.cff). Please cite the original paper when using the method, and acknowledge this repository separately when using this implementation. The paper's results belong to its authors.
 
 ```bibtex
 @article{zhang2026alphanist,
